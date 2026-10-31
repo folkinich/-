@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f8" />
+  <title>Войти — Собрались</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <main class="login-layout">
+    <a class="brand help-brand" href="index.html" aria-label="Собрались — регистрация">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>собрались<span class="brand-dot">.</span></span>
+    </a>
+    <section class="login-card">
+      <span class="form-step">С ВОЗВРАЩЕНИЕМ</span>
+      <h1>Войти в аккаунт</h1>
+      <p class="login-description">Продолжайте планировать и участвовать в событиях.</p>
+      <form id="login-form" novalidate>
+        <label class="field-label" for="login-email">Электронная почта</label>
+        <div class="input-wrap"><span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg></span><input id="login-email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required /></div>
+        <label class="field-label" for="login-password">Пароль</label>
+        <div class="input-wrap"><span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg></span><input id="login-password" name="password" type="password" placeholder="Введите пароль" autocomplete="current-password" required /><button class="toggle-password login-password-toggle" type="button" aria-label="Показать пароль"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button></div>
+        <button class="submit-button login-submit" type="submit"><span>Войти</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        <button id="resend-verification" class="resend-button" type="button">Отправить письмо повторно</button>
+        <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
+      <p class="resend-hint">Для повторной отправки укажите почту и пароль аккаунта.</p>
+      </form>
+      <p class="signup-prompt">Ещё нет аккаунта? <a class="login-link" href="index.html">Создать аккаунт</a></p>
+    </section>
+    <footer class="login-footer"><span>© 2026 Собрались</span><a href="help.html">Нужна помощь?</a></footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f8" />
+  <title>Главная — Собрались</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-body">
+  <main class="dashboard-page">
+    <header class="dashboard-nav">
+      <a class="brand help-brand" href="dashboard.html" aria-label="Собрались — главная">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>собрались<span class="brand-dot">.</span></span>
+      </a>
+      <div class="dashboard-user"><span class="user-avatar" id="user-avatar">С</span><span class="user-label"><b id="user-name">Пользователь</b><small id="user-role">Участник</small></span><button id="logout-button" class="logout-button" type="button">Выйти</button></div>
+    </header>
+
+    <p id="dashboard-message" class="dashboard-message" role="status" aria-live="polite"></p>
+    <button id="profile-retry" class="resend-button" type="button" hidden>Повторить загрузку</button>
+    <section class="welcome-row">
+      <div><span class="form-step">ЛИЧНЫЙ КАБИНЕТ</span><h1 id="welcome-title">Поздравляем!</h1><p id="welcome-caption">Вы вошли в аккаунт. Рады видеть вас на платформе «Собрались».</p></div>
+      <span class="welcome-spark" aria-hidden="true">✳</span>
+    </section>
+
+    <section class="welcome-slider" aria-label="Полезная информация">
+      <div class="slides-track" id="slides-track">
+        <article class="welcome-slide slide-green active" aria-hidden="false">
+          <div class="slide-copy"><span class="slide-kicker">ИДЕИ СОБИРАЮТ ЛЮДЕЙ</span><h2>Большое событие<br />начинается с идеи.</h2><p>Планируйте программу, делитесь идеями и создавайте встречи, которые хочется посетить.</p></div>
+          <div class="slide-art art-orbit" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="orbit-center">✳</span><span class="orbit-tag tag-one">идея</span><span class="orbit-tag tag-two">люди</span><span class="orbit-tag tag-three">событие</span></div>
+        </article>
+        <article class="welcome-slide slide-dark" aria-hidden="true">
+          <div class="slide-copy"><span class="slide-kicker">ТВОЁ ВРЕМЯ — ТВОЙ ВЫБОР</span><h2>Выбирай то,<br />что интересно тебе.</h2><p>Собирай собственное расписание из активностей и не пропускай важное.</p></div>
+          <div class="slide-art art-calendar" aria-hidden="true"><div class="mini-calendar"><span>ПРОГРАММА</span><i></i><i></i><i></i><i></i><i></i><b>✓</b></div><span class="calendar-star">✳</span></div>
+        </article>
+        <article class="welcome-slide slide-lilac" aria-hidden="true">
+          <div class="slide-copy"><span class="slide-kicker">ВМЕСТЕ ПРОЩЕ</span><h2>Каждый участник<br />на своём месте.</h2><p>Актуальная информация помогает организаторам и участникам быть на одной волне.</p></div>
+          <div class="slide-art art-people" aria-hidden="true"><span class="person person-one">А</span><span class="person person-two">М</span><span class="person person-three">И</span><span class="people-link">✳</span></div>
+        </article>
+      </div>
+      <div class="slider-controls"><div class="slider-dots" role="tablist" aria-label="Выбрать слайд"><button class="slider-dot active" type="button" aria-label="Слайд 1" aria-selected="true"></button><button class="slider-dot" type="button" aria-label="Слайд 2" aria-selected="false"></button><button class="slider-dot" type="button" aria-label="Слайд 3" aria-selected="false"></button></div><div class="slider-buttons"><button id="slide-prev" type="button" aria-label="Предыдущий слайд">←</button><button id="slide-next" type="button" aria-label="Следующий слайд">→</button></div></div>
+    </section>
+
+    <section class="dashboard-bottom"><div><span class="bottom-icon">✳</span><span><b>Ваш аккаунт готов</b><small>Познакомьтесь с возможностями платформы.</small></span></div><a href="help.html">Центр помощи <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

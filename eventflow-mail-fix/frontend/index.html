@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f8" />
+  <title>Создать аккаунт — Собрались</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro-panel" aria-label="О платформе">
+      <a class="brand" href="#" aria-label="Собрались — главная">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>собрались<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="intro-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span>ПЛАНИРУЙ. УЧАСТВУЙ.</span>
+        <h1>Хорошие идеи<br />начинаются <em>вместе.</em></h1>
+        <p>Создавай события, находи интересные активности и собирай своё расписание в одном месте.</p>
+      </div>
+
+      <div class="event-card" aria-label="Возможности платформы для мероприятий">
+        <div class="event-card-top">
+          <div>
+            <span class="event-label"><span class="live-dot"></span>ПЛАТФОРМА ДЛЯ СОБЫТИЙ</span>
+            <h2>Всё для события — в одном месте</h2>
+            <p class="event-subtitle">Помогаем организаторам и участникам быть на одной волне</p>
+          </div>
+          <span class="calendar-icon" aria-hidden="true">✳</span>
+        </div>
+        <div class="event-details">
+          <div class="event-line"><span class="line-icon">▤</span><span><b>Понятная программа</b><small>Активности, расписание и аудитории</small></span></div>
+          <div class="event-line"><span class="line-icon pin">♧</span><span><b>Удобная регистрация</b><small>Свободные места и личное расписание</small></span></div>
+        </div>
+        <div class="attendees"><div class="avatars"><i>О</i><i>У</i><i>✓</i></div><span><b>Организаторам и участникам</b><small>Всё важное — под рукой</small></span><span class="event-capacity">В одном месте</span></div>
+      </div>
+
+      <div class="intro-footer"><span>01</span><span class="footer-rule"></span><span>ТВОЁ СОБЫТИЕ. ТВОИ ПРАВИЛА.</span></div>
+      <span class="decor decor-one" aria-hidden="true">✳</span>
+      <span class="decor decor-two" aria-hidden="true">✳</span>
+    </section>
+
+    <section class="form-panel" aria-labelledby="form-title">
+      <div class="form-wrap">
+        <div class="mobile-brand brand">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>собрались<span class="brand-dot">.</span></span>
+        </div>
+        <div class="form-heading">
+          <span class="form-step">ВАШ ПЕРВЫЙ ШАГ</span>
+          <h2 id="form-title">Создать аккаунт</h2>
+          <p>Уже зарегистрированы? <a href="/login.html" class="login-link">Войти</a></p>
+        </div>
+
+        <form id="signup-form" novalidate>
+          <fieldset class="role-fieldset">
+            <legend>Я хочу присоединиться как</legend>
+            <div class="role-options">
+              <label class="role-option selected">
+                <input type="radio" name="role" value="participant" checked />
+                <span class="role-icon participant-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.2A4.8 4.8 0 0 1 8.3 13h1.4a4.8 4.8 0 0 1 4.8 4.8V19z"/><path d="M16 5.5a3 3 0 0 1 0 5.8M17 13a4.7 4.7 0 0 1 3.5 4.6V19h-3"/></svg></span>
+                <span class="role-text"><b>Участник</b><small>Выбирать активности</small></span>
+                <span class="radio-mark" aria-hidden="true"></span>
+              </label>
+              <label class="role-option">
+                <input type="radio" name="role" value="organizer" />
+                <span class="role-icon organizer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h6"/></svg></span>
+                <span class="role-text"><b>Организатор</b><small>Создавать события</small></span>
+                <span class="radio-mark" aria-hidden="true"></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-label" for="name">Как к вам обращаться?</label>
+          <div class="input-wrap"><span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20v-1.2a7 7 0 0 1 14 0V20z"/></svg></span><input id="name" name="name" type="text" placeholder="Например, Алексей" autocomplete="name" required /></div>
+
+          <label class="field-label" for="email">Электронная почта</label>
+          <div class="input-wrap"><span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg></span><input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required /></div>
+
+          <label class="field-label" for="password">Пароль</label>
+          <div class="input-wrap password-wrap"><span class="input-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg></span><input id="password" name="password" type="password" placeholder="Не менее 8 символов" autocomplete="new-password" minlength="8" required /><button class="toggle-password" type="button" aria-label="Показать пароль"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button></div>
+          <div class="password-hint"><span class="hint-dot"></span>Используйте не менее 8 символов</div>
+
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required /><span class="custom-check" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span>Я соглашаюсь с <a href="#terms">условиями использования</a><br class="desktop-break" /> и <a href="#privacy">политикой конфиденциальности</a></span></label>
+          <button class="submit-button" type="submit"><span>Создать аккаунт</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+          <p class="form-note"><span class="shield" aria-hidden="true">⌑</span>Ваши данные надёжно защищены</p>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <footer class="form-footer"><span>© 2026 Собрались</span><a href="help.html">Нужна помощь?</a></footer>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
