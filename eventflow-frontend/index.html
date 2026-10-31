@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173d2c"><title>Вход — Собрались</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-intro">
+      <a class="brand light" href="index.html"><span class="brand-mark"><i></i><i></i><i></i><i></i></span>собрались<span class="brand-dot">.</span></a>
+      <div class="auth-intro-copy"><span class="eyebrow">ХОРОШИЕ СОБЫТИЯ ОБЪЕДИНЯЮТ</span><h1>Быть там,<br>где <em>интересно.</em></h1><p>Находи события, выбирай активности<br>и собирай расписание под себя.</p></div>
+      <div class="auth-art" aria-hidden="true"><span class="art-orbit"></span><span class="art-orbit second"></span><span class="art-star">✳</span><span class="art-tag first">новые знакомства</span><span class="art-tag last">большие идеи</span></div>
+      <div class="auth-bottom">ТВОЁ ВРЕМЯ. ТВОИ СОБЫТИЯ.<span>2026 <span class="arrow-glyph" aria-hidden="true"></span></span></div>
+    </section>
+    <section class="auth-content">
+      <div class="auth-form-wrap"><span class="eyebrow muted">С ВОЗВРАЩЕНИЕМ</span><h2>Войти в аккаунт</h2><p class="auth-description">Твоё следующее событие уже ждёт.</p>
+        <form id="login-form" method="post">
+          <label for="login">Логин</label><input id="login" name="login" autocomplete="username" placeholder="Введи свой логин" required maxlength="254">
+          <label for="password">Пароль</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Введи пароль" required maxlength="200"><button id="password-toggle" type="button" aria-label="Показать пароль">◉</button></div>
+          <p class="account-hint">Учётную запись выдаёт организатор мероприятия.<br>Если нет доступа, обратись к нему.</p>
+          <button class="button primary full" id="login-submit" type="submit">Войти <span><span class="arrow-glyph" aria-hidden="true"></span></span></button>
+          <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="demo-entry"><span>Хочешь сначала осмотреться?</span><a class="button secondary full" href="dashboard.html?demo=1">Посмотреть демоверсию <span>→</span></a><small>Без входа. Только пример интерфейса.</small></div>
+      </div><footer class="auth-footer"><span>© 2026 Собрались</span><span>Планируй. Участвуй.</span></footer>
+    </section>
+  </main>
+  <script src="config.js"></script><script src="api.js"></script><script src="login.js"></script>
+</body></html>
