@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f8" />
+  <title>Помощь — Собрались</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="help-body">
+  <main class="help-page">
+    <header class="help-nav">
+      <a class="brand help-brand" href="index.html" aria-label="Собрались — регистрация">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>собрались<span class="brand-dot">.</span></span>
+      </a>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Вернуться к регистрации</a>
+    </header>
+
+    <section class="help-hero">
+      <span class="help-kicker"><span></span>ЦЕНТР ПОМОЩИ</span>
+      <h1>Чем можем помочь?</h1>
+      <p>Ответы на частые вопросы о регистрации и работе платформы.</p>
+    </section>
+
+    <div class="help-content">
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="help-section-heading"><div><span class="section-kicker">БЫСТРЫЕ ОТВЕТЫ</span><h2 id="faq-title">Часто спрашивают</h2></div><span class="faq-count">5 вопросов</span></div>
+        <div class="faq-list" id="faq-list">
+          <details class="faq-item" open><summary>Как создать аккаунт?<span class="faq-plus" aria-hidden="true"></span></summary><p>Заполните форму регистрации: укажите имя, электронную почту и пароль. Затем выберите, как будете пользоваться платформой — как участник или организатор — и примите условия использования.</p></details>
+          <details class="faq-item"><summary>Чем отличаются участник и организатор?<span class="faq-plus" aria-hidden="true"></span></summary><p>Участник просматривает программу и записывается на активности. Организатор создаёт мероприятие, добавляет аудитории и управляет расписанием и регистрациями.</p></details>
+          <details class="faq-item"><summary>Не пришло письмо после регистрации. Что делать?<span class="faq-plus" aria-hidden="true"></span></summary><p>Проверьте правильность адреса и папки «Спам». Если письма всё ещё нет, откройте страницу входа, укажите почту и пароль и нажмите «Отправить письмо повторно».</p></details>
+          <details class="faq-item"><summary>Можно ли изменить выбранную роль?<span class="faq-plus" aria-hidden="true"></span></summary><p>Если вы выбрали не ту роль, обратитесь в поддержку. Мы поможем разобраться с настройками аккаунта.</p></details>
+          <details class="faq-item"><summary>Как восстановить пароль?<span class="faq-plus" aria-hidden="true"></span></summary><p>Автоматическое восстановление пароля пока недоступно. Обратитесь к организатору мероприятия. Не отправляйте пароль через форму поддержки.</p></details>
+        </div>
+      </section>
+
+      <aside class="contact-card">
+        <div class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10h8M8 13h5"/></svg></div>
+        <span class="section-kicker">МЫ НА СВЯЗИ</span>
+        <h2>Не нашли ответ?</h2>
+        <p>Расскажите, что случилось, и мы постараемся помочь.</p>
+        <form id="support-form">
+          <label for="support-email">Ваша почта</label>
+          <input id="support-email" name="email" type="email" placeholder="name@example.com" required />
+          <label for="support-message">Сообщение</label>
+          <textarea id="support-message" name="message" rows="4" placeholder="Опишите вопрос подробнее…" required></textarea>
+          <button type="submit">Отправить сообщение <span aria-hidden="true">↗</span></button>
+          <p class="support-feedback" id="support-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-note"><span aria-hidden="true">⌑</span>Мы используем почту только для ответа на ваш вопрос.</div>
+      </aside>
+    </div>
+
+    <footer class="help-footer"><span>© 2026 Собрались</span><a href="index.html">Вернуться к созданию аккаунта</a></footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="help.js"></script>
+</body>
+</html>
