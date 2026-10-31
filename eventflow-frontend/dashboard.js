@@ -2,10 +2,17 @@ const store = window.EventFlowStore;
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const icon = (name) => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
-const format = (value, options) => new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', ...options }).format(new Date(value));
+// Reuse ICU formatters: constructing one for every time/date delays opening the dialog.
+const formatters = new Map();
+const format = (value, options) => {
+  const key = JSON.stringify(options);
+  if (!formatters.has(key)) formatters.set(key, new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', ...options }));
+  return formatters.get(key).format(new Date(value));
+};
 const time = (value) => format(value, { hour: '2-digit', minute: '2-digit' });
+const dayFormatter = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Moscow', year: 'numeric', month: '2-digit', day: '2-digit' });
 const dayKey = (value) => {
-  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Moscow', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(value));
+  const parts = dayFormatter.formatToParts(new Date(value));
   return ['year', 'month', 'day'].map((name) => parts.find((part) => part.type === name).value).join('-');
 };
 const dateValue = (date) => `${date}T12:00:00+03:00`;
@@ -19,6 +26,15 @@ let actionBusy = false;
 let toastTimer;
 const dialog = $('#event-dialog');
 const cancelDialog = $('#cancel-dialog');
+
+function syncModalState() {
+  document.documentElement.classList.toggle('modal-open', Boolean(document.querySelector('dialog[open]')));
+}
+function showDialog(modal) {
+  if (!modal.open) modal.showModal();
+  syncModalState();
+}
+for (const modal of [dialog, cancelDialog]) modal.addEventListener('close', syncModalState);
 
 function notify(message) {
   $('#toast').textContent = message;
@@ -112,7 +128,7 @@ function openEvent(id) {
   currentEvent = id;
   $('#dialog-message').textContent = '';
   renderDialog();
-  dialog.showModal();
+  showDialog(dialog);
 }
 function openCancel(id) {
   const activity = store.selected.find((item) => item.id === id);
@@ -120,7 +136,7 @@ function openCancel(id) {
   pendingCancel = id;
   $('#cancel-description').textContent = `«${activity.title}», ${dateLabel(dayKey(activity.start))}, ${time(activity.start)}.`;
   $('#cancel-message').textContent = '';
-  cancelDialog.showModal();
+  showDialog(cancelDialog);
   $('#keep-registration').focus();
 }
 async function register(id, button) {
