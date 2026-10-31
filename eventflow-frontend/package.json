@@ -1,0 +1,15 @@
+{
+  "name": "sobralis-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EventFlow frontend: events and personal schedule",
+  "engines": {
+    "node": ">=18.20.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "serve": "node scripts/serve.cjs",
+    "start": "npm run serve",
+    "test": "node --test tests/serve.test.cjs"
+  }
+}

@@ -1,18 +1,21 @@
 # Собрались — frontend мероприятий и личного расписания
 
-Самостоятельный frontend на HTML, CSS и JavaScript. Node.js и сборка не нужны.
-Внешних библиотек, шрифтов, CDN и картинок из Интернета нет.
+Frontend на HTML, CSS и JavaScript с npm-упаковкой для Docker.
+Внешних npm-зависимостей, шрифтов и CDN нет. Сборка и сервер используют стандартный Node.js.
+**Деплой: см. DEPLOY.md.**
 
 ## Посмотреть прямо сейчас
 
 Из этой папки в PowerShell:
 
 ```powershell
-python -m http.server 5500 --bind 127.0.0.1
+npm ci
+npm run build
+npm run serve
 ```
 
-Откройте http://localhost:5500 и нажмите «Посмотреть демоверсию».
-Или сразу http://localhost:5500/dashboard.html?demo=1
+Откройте http://localhost:3000 и нажмите «Посмотреть демоверсию».
+Или сразу http://localhost:3000/dashboard.html?demo=1
 
 Терминал сервера должен оставаться открытым. HTML не открывайте как file://.
 Это адрес на вашем ноутбуке; размещение для всей команды на сервере — отдельный шаг.
@@ -47,8 +50,8 @@ python -m http.server 5500 --bind 127.0.0.1
 
 Сохраните текущую работу. Скопируйте **содержимое** этой папки в корень frontend-репозитория,
 сохранив .git, .gitlab-ci.yml и policy.yml. В архиве их нет.
-Важны все файлы: index.html, login.html, dashboard.html, style.css,
-config.js, api.js, data.js, store.js, login.js, dashboard.js.
+Важны все HTML/CSS/JS, package.json, package-lock.json, папка scripts и Dockerfile.
+Полный список и порядок деплоя — в DEPLOY.md.
 Данные программы, адаптер и стили теперь относятся к новой версии — переносите их вместе.
 Старые script.js/help.html/help.js не используются новой навигацией; удалять их для запуска не нужно.
 Не копируйте эту папку внутрь backend.
@@ -56,9 +59,9 @@ config.js, api.js, data.js, store.js, login.js, dashboard.js.
 ## Подключение к backend
 
 В `config.js` укажите публичный адрес API. Пустая строка означает тот же origin
-(например, при обратном прокси). Сейчас стоит http://localhost:3001.
+(например, при обратном прокси). Сейчас используется тот же origin. Для прокси /api задайте runtime-переменную BACKEND_URL Node-серверу.
 Запросы отправляются с credentials: include для cookie-сессии.
-Backend должен разрешать точный origin frontend, например http://localhost:5500,
+Backend должен разрешать точный origin frontend, например http://localhost:3000,
 и устанавливать cookies с корректными HttpOnly/SameSite/Secure.
 Для разных несвязанных сайтов используйте общий сайт с обратным прокси:
 CORS сам по себе не решает ограничения браузера на сторонние cookies.
